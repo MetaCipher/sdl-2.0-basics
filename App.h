@@ -1,4 +1,4 @@
-#include "SDL.h"
+#include <SDL2/SDL.h>
 
 class App {
 	private:
@@ -6,8 +6,11 @@ class App {
 
 		bool Running = true;
 
-		SDL_Window*  Window 		= NULL;
+		SDL_Window*  Window = NULL;
 		SDL_Surface* PrimarySurface = NULL;
+
+		static const int WindowWidth = 1024;
+		static const int WindowHeight = 768;
 
 	private:
 		App();

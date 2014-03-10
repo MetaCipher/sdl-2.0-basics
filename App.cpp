@@ -1,4 +1,5 @@
 #include "App.h"
+#include "Log.h"
 
 App App::Instance;
 
@@ -17,7 +18,7 @@ bool App::Init() {
     if((Window = SDL_CreateWindow(
     	"My SDL Game",
     	SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED,
-    	SCREEN_WIDTH, SCREEN_HEIGHT, SDL_WINDOW_SHOWN)
+    	WindowWidth, WindowHeight, SDL_WINDOW_SHOWN)
     ) == NULL) {
     	Log("Unable to create SDL Window: %s", SDL_GetError());
     	return false;
@@ -50,8 +51,10 @@ int App::Execute(int argc, char* argv[]) {
 	SDL_Event Event;
 
 	while(Running) {
-		while(SDL_PollEvent(&TheEvent) != 0) {
-			OnEvent();
+		while(SDL_PollEvent(&Event) != 0) {
+			OnEvent(&Event);
+
+			if(Event.type == SDL_QUIT) Running = false;
 		}
 
 		Loop();
@@ -65,6 +68,6 @@ int App::Execute(int argc, char* argv[]) {
 	return 1;
 }
 
-static App* App::GetInstance() {
+App* App::GetInstance() {
 	return &App::Instance;
 }
