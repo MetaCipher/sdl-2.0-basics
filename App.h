@@ -6,7 +6,8 @@ class App {
 
 		bool Running = true;
 
-		SDL_Window*  Window = NULL;
+		SDL_Window* Window = NULL;
+		SDL_Renderer* Renderer = NULL;
 		SDL_Surface* PrimarySurface = NULL;
 
 		static const int WindowWidth = 1024;
