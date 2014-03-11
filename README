@@ -1,0 +1,16 @@
+SDL 2.0 Basics
+3/11/2014
+
+Foundation for building SDL 2.0 applications and games.
+
+Build requirements
+ - SDL 2.0 (http://libsdl.org/download-2.0.php)
+
+Notes:
+ - You probably want to use and build against 32-bit build of SDL
+ - These project files assume SDL is located inside of "SDL2" folder and part of your search paths (SDL2/SDL.h)
+ - Build files using a compatible c++11 compiler
+
+This tutorial and code are property of:
+Tim Jones
+SDLTutorials.com

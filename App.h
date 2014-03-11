@@ -1,3 +1,12 @@
+//==============================================================================
+/*
+	Primary application class
+
+	3/11/2014
+    SDLTutorials.com
+    Tim Jones
+*/
+//==============================================================================
 #include <SDL2/SDL.h>
 
 class App {
@@ -16,14 +25,19 @@ class App {
 	private:
 		App();
 
+		// Capture SDL Events
 		void OnEvent(SDL_Event* Event);
 
+		// Initialize our SDL game / app
 		bool Init();
 
+		// Logic loop
 		void Loop();
 
+		// Render loop (draw)
 		void Render();
 
+		// Free up resources
 		void Cleanup();
 
 	public:
@@ -31,4 +45,7 @@ class App {
 
 	public:
 		static App* GetInstance();
+
+		static int GetWindowWidth();
+		static int GetWindowHeight();
 };

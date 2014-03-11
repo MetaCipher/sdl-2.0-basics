@@ -20,13 +20,11 @@
 		<Compiler>
 			<Add option="-std=c++11" />
 			<Add option="-Wall" />
-			<Add directory="C:/SDL/include" />
 		</Compiler>
 		<Linker>
 			<Add library="mingw32" />
 			<Add library="SDL2main" />
 			<Add library="SDL2" />
-			<Add directory="C:/SDL/lib" />
 		</Linker>
 		<Unit filename="App.cpp" />
 		<Unit filename="App.h" />

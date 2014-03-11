@@ -338,17 +338,17 @@
 1394478353 source:/Users/tim/Dropbox/Tutorials/Repositories/SDLTutorials.com/sdl-2.0-basics/main.cpp
 	"App.h"
 
-1394485271 source:z:\dropbox\tutorials\repositories\sdltutorials.com\sdl-2.0-basics\app.cpp
+1394538953 source:z:\dropbox\tutorials\repositories\sdltutorials.com\sdl-2.0-basics\app.cpp
 	"App.h"
 	"Log.h"
 
-1394535086 z:\dropbox\tutorials\repositories\sdltutorials.com\sdl-2.0-basics\app.h
+1394538846 z:\dropbox\tutorials\repositories\sdltutorials.com\sdl-2.0-basics\app.h
 	<SDL2/SDL.h>
 
-1394478787 z:\dropbox\tutorials\repositories\sdltutorials.com\sdl-2.0-basics\log.h
+1394538636 z:\dropbox\tutorials\repositories\sdltutorials.com\sdl-2.0-basics\log.h
 	<stdio.h>
 
-1394485675 source:z:\dropbox\tutorials\repositories\sdltutorials.com\sdl-2.0-basics\main.cpp
+1394538480 source:z:\dropbox\tutorials\repositories\sdltutorials.com\sdl-2.0-basics\main.cpp
 	"App.h"
 
 1394257098 c:\sdl\include\sdl2\sdl.h

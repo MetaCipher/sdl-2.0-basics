@@ -1,14 +1,18 @@
+//==============================================================================
 #include "App.h"
 #include "Log.h"
 
 App App::Instance;
 
+//==============================================================================
 App::App() {
 }
 
+//------------------------------------------------------------------------------
 void App::OnEvent(SDL_Event* Event) {
 }
 
+//------------------------------------------------------------------------------
 bool App::Init() {
     if(SDL_Init(SDL_INIT_VIDEO) < 0) {
     	Log("Unable to Init SDL: %s", SDL_GetError());
@@ -16,7 +20,7 @@ bool App::Init() {
     }
 
     if(!SDL_SetHint(SDL_HINT_RENDER_SCALE_QUALITY, "1")) {
-        Log("Unable to init hinting");
+        Log("Unable to Init hinting: %s", SDL_GetError());
     }
 
     if((Window = SDL_CreateWindow(
@@ -40,29 +44,33 @@ bool App::Init() {
     return true;
 }
 
+//------------------------------------------------------------------------------
 void App::Loop() {
 }
 
+//------------------------------------------------------------------------------
 void App::Render() {
     SDL_RenderClear(Renderer);
 
 	SDL_RenderPresent(Renderer);
 }
 
+//------------------------------------------------------------------------------
 void App::Cleanup() {
-    if(Renderer) {
-        SDL_DestroyRenderer(Renderer);
-        Renderer = NULL;
-    }
+	if(Renderer) {
+		SDL_DestroyRenderer(Renderer);
+		Renderer = NULL;
+	}
 
 	if(Window) {
-	    SDL_DestroyWindow(Window);
+		SDL_DestroyWindow(Window);
 		Window = NULL;
 	}
 
     SDL_Quit();
 }
 
+//------------------------------------------------------------------------------
 int App::Execute(int argc, char* argv[]) {
 	if(!Init()) return 0;
 
@@ -78,7 +86,7 @@ int App::Execute(int argc, char* argv[]) {
 		Loop();
 		Render();
 
-		SDL_Delay(1);
+		SDL_Delay(1); // Breath
 	}
 
 	Cleanup();
@@ -86,6 +94,10 @@ int App::Execute(int argc, char* argv[]) {
 	return 1;
 }
 
-App* App::GetInstance() {
-	return &App::Instance;
-}
+//==============================================================================
+App* App::GetInstance() { return &App::Instance; }
+
+int App::GetWindowWidth()  { return WindowWidth; }
+int App::GetWindowHeight() { return WindowHeight; }
+
+//==============================================================================
