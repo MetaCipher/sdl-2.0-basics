@@ -1,2 +1,5 @@
 .gitignore
+.DS_Store
 Build
+sdl-2.0-basics.depend
+sdl-2.0-basics.layout

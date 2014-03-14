@@ -9,6 +9,9 @@
 //==============================================================================
 #include <SDL2/SDL.h>
 
+#ifndef __APP_H__
+	#define __APP_H__
+
 class App {
 	private:
 		static App Instance;
@@ -49,3 +52,5 @@ class App {
 		static int GetWindowWidth();
 		static int GetWindowHeight();
 };
+
+#endif
